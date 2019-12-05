@@ -1,0 +1,55 @@
+{extend name="base" /}
+{block name="body"}
+<div class="layui-body">
+    <!--tab标签-->
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li class="layui-this">网站概览</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                {if $config.url=='beta.wobd.live'}<div style="color: red;font-size: 100px">本站已开放后台演示，不少同行用本演示站骗人，郑重承诺： 本店唯一QQ:523626234,店唯一QQ:523626234,店唯一QQ:523626234,没有任何所谓代理、搭档、合伙人，请擦亮眼睛，切勿相信其它任何QQ，非本QQ出售源码将无任何更新升级服务</div>{/if}
+                <table class="layui-table">
+                    <tr>
+                        <td style="width: 400px;">网站域名</td>
+                        <td>{$config.url}</td>
+                    </tr>
+                    <tr>
+                        <td>网站目录</td>
+                        <td>{$config.document_root}</td>
+                    </tr>
+                    <tr>
+                        <td>服务器操作系统</td>
+                        <td>{$config.server_os}</td>
+                    </tr>
+                    <tr>
+                        <td>服务器端口</td>
+                        <td>{$config.server_port}</td>
+                    </tr>
+                    <tr>
+                        <td>服务器环境</td>
+                        <td>{$config.server_soft}</td>
+                    </tr>
+                    <tr>
+                        <td>PHP版本</td>
+                        <td>{$config.php_version}</td>
+                    </tr>
+                    <tr>
+                        <td>MySQL版本</td>
+                        <td>{$config.mysql_version}</td>
+                    </tr>
+                    <tr>
+                        <td>最大上传限制</td>
+                        <td>{$config.max_upload_size}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="script"}
+<script>
+    high_nav("{:url('index')}");
+</script>
+{/block}

@@ -1,0 +1,358 @@
+{extend name="base" /}
+{block name="body"}
+
+<style>
+    .layui-form-pane .layui-form-label{
+        width: auto;
+    }
+</style>
+
+<div class="layui-body">
+    <!--tab标签-->
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li class="layui-this">配置</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form layui-form-pane" action="" method="post">
+                    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+                        <legend>分成配置</legend>
+                    </fieldset>
+                    <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <label class="layui-form-label">一级推广分成(%)</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="firt_parent" placeholder="直推兑换分成" autocomplete="off" class="layui-input"  value="{$base_config['firt_parent']|default=''}">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">二级推广分成(%)</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="second_parent" placeholder="直推兑换分成" autocomplete="off" class="layui-input"  value="{$base_config['second_parent']|default=''}">
+                            </div>
+                        </div>
+
+                        <div class="layui-inline">
+                            <label class="layui-form-label">三级推广分成(%)</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="third_parent" placeholder="直推兑换分成" autocomplete="off" class="layui-input"  value="{$base_config['third_parent']|default=''}">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+                        <legend>团队奖励配置</legend>
+                    </fieldset>
+                    <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <label class="layui-form-label">黄金VIP(%)</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="gold_grade" placeholder="黄金VIP分成" autocomplete="off" class="layui-input"  value="{$base_config['gold_grade']|default=''}">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">钻石VIP(%)</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="diamonds_grade" placeholder="钻石VIP分成" autocomplete="off" class="layui-input"  value="{$base_config['diamonds_grade']|default=''}">
+                            </div>
+                        </div>
+
+                        <div class="layui-inline">
+                            <label class="layui-form-label">皇冠VIP(%)</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="crown_grade" placeholder="皇冠VIP分成" autocomplete="off" class="layui-input"  value="{$base_config['crown_grade']|default=''}">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+                        <legend>手续费配置</legend>
+                    </fieldset>
+
+                    <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <label class="layui-form-label">OCE提币手续费（%）</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="pig_sxf" placeholder="交易手续费" autocomplete="off" class="layui-input"  value="{$base_config['pig_sxf']|default=''}">
+                            </div>
+                        </div>
+
+                        <div class="layui-inline">
+                            <label class="layui-form-label">GGE提币手续费（%）</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="doge_sxf" placeholder="交易手续费" autocomplete="off" class="layui-input"  value="{$base_config['doge_sxf']|default=''}">
+                            </div>
+                        </div>
+                    </div>
+
+                    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+                        <legend>基础配置</legend>
+                    </fieldset>
+                    <div class="layui-form-item">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">是否即抢立即开奖模式,即开模式指定匹配失效（否则为结束统一开奖，需等至开奖结束）</label>
+                            <div class="layui-input-block">
+                                <input type="checkbox" name="jk_open" lay-skin="switch" lay-text="是|否" {notempty name="base_config.jk_open"} checked {/notempty}>
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">立即开奖等待时间(秒)</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="jk_open_time" placeholder="立即开奖等待时间" autocomplete="off" class="layui-input"  value="{$base_config['jk_open_time']|default=''}">
+                            </div>
+                        </div>
+
+                        <div class="layui-inline">
+                            <label class="layui-form-label">开抢前不能预约时间(秒)</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="jk_open_yuyue" placeholder="开抢前不能预约时间" autocomplete="off" class="layui-input"  value="{$base_config['jk_open_yuyue']|default=''}">
+                            </div>
+                        </div>
+
+                        <div class="layui-inline">
+                            <label class="layui-form-label">注册赠送微分</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="pay_points" placeholder="注册赠送微分" autocomplete="off" class="layui-input"  value="{$base_config['pay_points']|default=''}">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">销毁龟裂变个数</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="split_num" placeholder="销毁裂变个数" autocomplete="off" class="layui-input"  value="{$base_config['split_num']|default=''}">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">收益转存界限</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="zc_integral_limit" placeholder="收益转存界限" autocomplete="off" class="layui-input"  value="{$base_config['zc_integral_limit']|default=''}">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">最大抢单量</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="qiangdan_limit" placeholder="用户同时领养中最大数量" autocomplete="off" class="layui-input"  value="{$base_config['qiangdan_limit']|default=''}">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <label class="layui-form-label">微分转赠倍数</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="wf_nb" placeholder="微分转赠倍数" autocomplete="off" class="layui-input"  value="{$base_config['wf_nb']|default=''}">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">微分转赠池底</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="wf_lownb" placeholder="用户微分最低保留数" autocomplete="off" class="layui-input"  value="{$base_config['wf_lownb']|default=''}">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">付款时间限制(秒)</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="cancel_time" placeholder="()秒之内未付款取消订单" autocomplete="off" class="layui-input"  value="{$base_config['cancel_time']|default=''}">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">卖家自动确认(秒)</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="enter_time" placeholder="付款()秒之后自动确认" autocomplete="off" class="layui-input"  value="{$base_config['enter_time']|default=''}">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">释放比率(%)</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="release_ratio" placeholder="释放比率" autocomplete="off" class="layui-input"  value="{$base_config['release_ratio']|default=''}">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">XBD兑换微分比率(n:1)</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="exchange_rate" placeholder="兑换比率" autocomplete="off" class="layui-input"  value="{$base_config['exchange_rate']|default=''}">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">XBD兑换微分最小值</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="exchange_min" placeholder="兑换最小值" autocomplete="off" class="layui-input"  value="{$base_config['exchange_min']|default=''}">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">解封手续费</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="unsealing_fee" placeholder="解封手续费" autocomplete="off" class="layui-input"  value="{$base_config['unsealing_fee']|default=''}">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">出售资产兑换微分比率(n:1)</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="sell_exchange_rate" placeholder="兑换比率" autocomplete="off" class="layui-input"  value="{$base_config['sell_exchange_rate']|default=''}">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">累计收益兑换微分比率(n:1)</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="cumulative_exchange_rate" placeholder="兑换比率" autocomplete="off" class="layui-input"  value="{$base_config['cumulative_exchange_rate']|default=''}">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">出售资产出售订单单数最小值</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="sell_assets_min" placeholder="订单单数" autocomplete="off" class="layui-input"  value="{$base_config['sell_assets_min']|default=''}">
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+                        <legend>出售配置</legend>
+                    </fieldset>
+                    <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <label class="layui-form-label">成熟时间差(秒)</label>
+                            <div class="layui-input-inline" style="width:300px">
+                                <input type="text" name="sell_end_time" placeholder="成熟时间=交易确认时间+合约期-成熟时间差" autocomplete="off" class="layui-input"  value="{$base_config['sell_end_time']|default=''}">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">收益最低出售额</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="sell_min" placeholder="收益最低出售额" autocomplete="off" class="layui-input"  value="{$base_config['sell_min']|default=''}">
+                            </div>
+                        </div>
+
+                        <div class="layui-inline">
+                            <label class="layui-form-label">每日出售总收益次数限制</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="sell_num" placeholder="每日出售总收益次数限制" autocomplete="off" class="layui-input"  value="{$base_config['sell_num']|default=''}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <label class="layui-form-label">出售推荐收益区间(最小值)</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="sare_sell_min" placeholder="推荐收益最低出售额" autocomplete="off" class="layui-input"  value="{$base_config['sare_sell_min']|default=''}">
+                            </div>
+                            <div class="layui-form-mid">-</div>
+                            <label class="layui-form-label">(最大值)</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="sare_sell_max" placeholder="推荐收益最大出售额" autocomplete="off" class="layui-input"  value="{$base_config['sare_sell_max']|default=''}">
+                            </div>
+                        </div>
+
+                        <div class="layui-inline">
+                            <label class="layui-form-label">每日出售推荐收益限制</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="sare_sell_num" placeholder="每日出售推荐收益次数限制" autocomplete="off" class="layui-input"  value="{$base_config['sare_sell_num']|default=''}">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <label class="layui-form-label">出售团队收益区间(最小值)</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="team_sell_min" placeholder="团队收益最低出售额" autocomplete="off" class="layui-input"  value="{$base_config['team_sell_min']|default=''}">
+                            </div>
+                            <div class="layui-form-mid">-</div>
+                            <label class="layui-form-label">(最大值)</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="team_sell_max" placeholder="团队收益最大出售额" autocomplete="off" class="layui-input"  value="{$base_config['team_sell_max']|default=''}">
+                            </div>
+                        </div>
+
+                        <div class="layui-inline">
+                            <label class="layui-form-label">每日出售团队收益限制</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="team_sell_num" placeholder="每日出售团队收益次数限制" autocomplete="off" class="layui-input"  value="{$base_config['team_sell_num']|default=''}">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <label class="layui-form-label">出售收益转存区间(最小值)</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="zc_sell_min" placeholder="收益转存最低出售额" autocomplete="off" class="layui-input"  value="{$base_config['zc_sell_min']|default=''}">
+                            </div>
+                            <div class="layui-form-mid">-</div>
+                            <label class="layui-form-label">(最大值)</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="zc_sell_max" placeholder="收益转存最大出售额" autocomplete="off" class="layui-input"  value="{$base_config['zc_sell_max']|default=''}">
+                            </div>
+                        </div>
+
+                        <div class="layui-inline">
+                            <label class="layui-form-label">每日出售收益转存限制</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="zc_sell_num" placeholder="每日出售收益转存次数限制" autocomplete="off" class="layui-input"  value="{$base_config['zc_sell_num']|default=''}">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <label class="layui-form-label">出售感恩收益区间(最小值)</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="gy_sell_min" placeholder="感恩收益最低出售额" autocomplete="off" class="layui-input"  value="{$base_config['gy_sell_min']|default=''}">
+                            </div>
+                            <div class="layui-form-mid">-</div>
+                            <label class="layui-form-label">(最大值)</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="gy_sell_max" placeholder="感恩收益最大出售额" autocomplete="off" class="layui-input"  value="{$base_config['gy_sell_max']|default=''}">
+                            </div>
+                        </div>
+
+                        <div class="layui-inline">
+                            <label class="layui-form-label">每日出售感恩收益限制</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="gy_sell_num" placeholder="每日感恩收益存次数限制" autocomplete="off" class="layui-input"  value="{$base_config['gy_sell_num']|default=''}">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <label class="layui-form-label">出售资产区间(最小值)</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="assets_sell_min" placeholder="感恩收益最低出售额" autocomplete="off" class="layui-input"  value="{$base_config['assets_sell_min']|default=''}">
+                            </div>
+                            <div class="layui-form-mid">-</div>
+                            <label class="layui-form-label">(最大值)</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="assets_sell_max" placeholder="感恩收益最大出售额" autocomplete="off" class="layui-input"  value="{$base_config['assets_sell_max']|default=''}">
+                            </div>
+                        </div>
+
+                        <div class="layui-inline">
+                            <label class="layui-form-label">每日出售资产限制</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="assets_sell_num" placeholder="每日感恩收益存次数限制" autocomplete="off" class="layui-input"  value="{$base_config['assets_sell_num']|default=''}">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button class="layui-btn" lay-submit lay-filter="*">提交</button>
+                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="script"}
+<script>
+    high_nav("{:url('baseConfig')}");
+</script>
+{/block}

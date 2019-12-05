@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>我的</title>
+    <style>
+
+        * {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        header, .top_fixed {
+            -webkit-transform: translateZ(0);
+        }
+
+        .bghead {
+            text-align: center;
+            width: 100%;
+            height: 3rem;
+            line-height: 2rem;
+            padding-top: 0.5rem;
+        }
+
+        .bghead .logo img {
+            height: 1.3rem;
+        }
+
+        @media screen and (max-width: 320px) {
+            .zc_goods_list .item .info {
+                margin: 0rem !important;
+            }
+        }
+
+        html {
+            font-size: 6.25vw !important;
+        }
+
+        .footer, .top_fixed {
+            -webkit-transform: translateZ(0);
+        }
+    </style>
+    <link rel="stylesheet" href="/public/style/assets/css/style.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="https://block-dog.oss-cn-beijing.aliyuncs.com/template/mobile/block/static/css/iconfont.css?v1.1"/>
+    <script src="https://block-dog.oss-cn-beijing.aliyuncs.com/template/mobile/block/static/js/jquery-3.1.1.min.js"
+            type="text/javascript" charset="utf-8"></script>
+    <!--<script src="https://block-dog.oss-cn-beijing.aliyuncs.com/template/mobile/block/static/js/mobile-util.js" type="text/javascript" charset="utf-8"></script>-->
+    <script src="https://block-dog.oss-cn-beijing.aliyuncs.com/public/js/global4.js?v1.11"></script>
+    <script src="https://block-dog.oss-cn-beijing.aliyuncs.com/public/js/layer/mobile/layer.js"
+            type="text/javascript"></script>
+    <script src="https://block-dog.oss-cn-beijing.aliyuncs.com/public/js/dropload.min.js"></script>
+    <script src="/public/static/index/assets/js/ajaxplugin.js"></script>
+    <script src="https://block-dog.oss-cn-beijing.aliyuncs.com/template/mobile/block/static/js/common14.js?v=1.82"
+            type="text/javascript"></script>
+    <meta name="referrer" content="no-referrer">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+
+
+</head>
+<body class="gray">
+
+<style>
+    .my_center_top, .top_fixed {
+        position: static !important;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        top: unset !important;
+        left: unset !important;
+        z-index: unset !important;
+        -webkit-text-size-adjust: none;
+        -webkit-tap-highlight-color: transparent;
+    }
+    .footer {
+        bottom: 0px;
+        left: 0px;
+        position: fixed !important;
+        z-index: unset !important;
+        -webkit-transform: unset !important;
+    }
+
+</style>
+<div class="my_center_top" style="padding-top: 1rem;">
+    <a class="setting" href="set.html"><i class="iconfont icon-gongnengjianyi"></i></a>
+    <div class="user_info">
+        <div class="t">
+            <h3>{$user.nickname}<span style="margin-left: .7rem; font-size: .5rem; color:#ffd100;"></span></h3>
+            <p>等&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;级：{$userlevel.name}</p>
+            <p>ID/手機：{$user.mobile}</p>
+        </div>
+    </div>
+    <div class="account_info">
+        <ul>
+            <li><a href="{:url('pig_currency')}"><h3>{$user.pig}</h3><span>XBD</span></a></li>
+            <li><a href="{:url('doge_money')}"><h3>{$user.doge}</h3><span>出售资产</span></a></li>
+            <li><a href="{:url('blessings_log')}"><h3>{$user.pay_points}</h3><span>营养分</span></a></li>
+            <li><a href="{:url('profit_log')}"><h3>{$contract_revenue}</h3><span>合约收益</span></a></li>
+            <li><a href="javascript:;"><h3>{$user_pigs}</h3><span>總資產</span></a></li>
+            <li><a href="{:url('profit')}"><h3>{$user.share_integral+$user.team_integral+$user.zc_integral+$user.gy_integral}</h3><span>累计收益</span></a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="grid_menu2" style="margin-bottom: 0.4rem;">
+    <div class="item">
+        <a href="{:url('adopt_log')}">
+            <i class="iconfont icon-mairu"></i>
+            <h3>領養記錄</h3>
+        </a>
+    </div>
+    <div class="item">
+        <a href="{:url('transfer_log')}">
+            <i class="iconfont icon-maichu"></i>
+            <h3>轉讓記錄</h3>
+        </a>
+    </div>
+    <div class="item">
+        <a href="{:url('reservation_log')}">
+            <i class="iconfont icon-yiwancheng-"></i>
+            <h3>預約記錄</h3>
+        </a>
+    </div>
+</div>
+
+<div class="grid_menu" style="margin-top: 0.1rem;">
+    <div class="item">
+        <a href="{:url('safety_center')}">
+            <svg t="1566301962652" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="9499"
+                 width="36" height="36">
+                <path d="M867.584 160.192c-149.632-16.928-262.208-57.408-334.592-120.352l-19.04-16.544-20.544 14.656C379.968 118.944 267.776 160 160 160H128v448c0 137.344 121.088 261.92 370.208 380.864l13.088 6.24 13.344-5.728C771.072 883.52 896 755.232 896 608V163.424l-28.416-3.232zM832 608c0 116.8-107.392 223.36-319.328 316.8C299.872 821.024 192 714.464 192 608V222.976c104.672-6.784 211.584-46.688 318.496-118.944C587.232 162.528 695.168 201.536 832 220.256V608z"
+                      p-id="9500" fill="#8a8a8a"></path>
+                <path d="M359.776 468.672a32 32 0 1 0-47.968 42.4l121.792 137.824c12.608 14.24 30.176 21.568 47.904 21.568a64.384 64.384 0 0 0 49.696-23.52l197.6-242.72a32 32 0 0 0-49.632-40.416l-197.6 242.688-121.792-137.824z"
+                      p-id="9501" fill="#8a8a8a"></path>
+            </svg>
+            <h3>安全中心</h3>
+        </a>
+    </div>
+    <div class="item">
+        <a href="javascript:checkAuth();">
+            <svg t="1566301917394" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7953"
+                 width="36" height="36">
+                <path d="M832 561.376c-88.352 0-160 71.648-160 160 0 88.352 71.648 160 160 160s160-71.648 160-160C992 633.024 920.352 561.376 832 561.376zM911.04 680.608l-90.496 90.496c-2.88 2.88-6.88 4.672-11.328 4.672-4.416 0-8.416-1.792-11.328-4.672l-45.248-45.248c-2.848-2.88-2.656-7.712 0.48-10.848s7.968-3.328 10.848-0.48l39.584 39.584c1.44 1.44 3.456 2.336 5.664 2.336 2.208 0 4.224-0.896 5.664-2.336l84.864-84.864c3.136-3.136 8.192-3.136 11.328 0C914.144 672.416 914.144 677.472 911.04 680.608z"
+                      p-id="7954" fill="#8a8a8a"></path>
+                <path d="M584 384l288 0c8.832 0 16-7.168 16-16s-7.168-16-16-16l-288 0c-8.832 0-16 7.168-16 16S575.168 384 584 384z"
+                      p-id="7955" fill="#8a8a8a"></path>
+                <path d="M584 512l288 0c8.832 0 16-7.168 16-16s-7.168-16-16-16l-288 0c-8.832 0-16 7.168-16 16S575.168 512 584 512z"
+                      p-id="7956" fill="#8a8a8a"></path>
+                <path d="M616 640c8.832 0 16-7.168 16-16s-7.168-16-16-16l-32 0c-8.832 0-16 7.168-16 16s7.168 16 16 16L616 640z"
+                      p-id="7957" fill="#8a8a8a"></path>
+                <path d="M442.496 585.216c-5.824 6.656-5.152 16.768 1.472 22.592 38.144 33.44 60.032 81.696 60.032 132.384 0 8.832 7.168 16 16 16s16-7.168 16-16c0-59.904-25.856-116.896-70.912-156.448C458.4 577.952 448.32 578.592 442.496 585.216z"
+                      p-id="7958" fill="#8a8a8a"></path>
+                <path d="M120 740.192c0 8.832 7.168 16 16 16s16-7.168 16-16c0-75.904 49.792-143.616 121.536-167.04 16.768 7.072 35.168 11.008 54.464 11.008 77.664 0 140.8-63.168 140.8-140.8 0-77.632-63.168-140.768-140.8-140.768-77.632 0-140.8 63.168-140.8 140.768 0 44 20.704 82.88 52.416 108.736C167.904 585.92 120 659.2 120 740.192zM219.2 443.328c0-59.968 48.8-108.768 108.8-108.768 60 0 108.8 48.8 108.8 108.768 0 60-48.8 108.8-108.8 108.8C268 552.16 219.2 503.328 219.2 443.328z"
+                      p-id="7959" fill="#8a8a8a"></path>
+                <path d="M669.952 832 136 832c-8.192 0-20.384-3.136-26.624-9.376S96 808.192 96 800l0-96L96 288 96 224c0-8.192 7.136-16.384 13.376-22.624C115.616 195.136 127.808 192 136 192l768 0c8.192 0 12.384 3.136 18.624 9.376C928.864 207.616 928 215.808 928 224l0 339.232c11.488 6.656 22.176 14.464 32 23.296L960 224c0-16.384-2.24-32.768-14.752-45.248C932.768 166.24 920.384 160 904 160l-768 0C119.616 160 99.232 166.24 86.752 178.752 74.24 191.232 64 207.616 64 224l0 64 0 416 0 96c0 16.384 10.24 32.768 22.752 45.248C99.232 857.76 119.616 864 136 864l559.232 0C685.696 854.304 677.28 843.552 669.952 832z"
+                      p-id="7960" fill="#8a8a8a"></path>
+            </svg>
+            <h3>實名認證</h3>
+        </a>
+    </div>
+    <div class="item">
+        <a href="{:url('bankcard')}">
+            <svg t="1566301878450" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7117"
+                 width="36" height="36">
+                <path d="M859.024 928.488H163.158c-54.661 0-98.98-44.315-98.98-98.974V302.007l-0.299 0.196s0.092-21.917 0.179-47.236c-0.016-2.837-0.016-5.424 0.026-7.768 0.069-20.791 0.128-42.576 0.128-55.689 0-47.845 36.012-93.021 89.576-93.021h549.133c47.846 0 97.53 31.672 97.53 93.021 0 12.746 0.089 23.539-0.15 32.696h58.724c54.662 0 98.981 44.315 98.981 98.971v506.338c0 54.658-44.319 98.973-98.982 98.973zM738.037 191.425c0-17.915-14.625-32.448-35.116-32.448H160.79c-20.493 0-35.118 14.534-35.118 32.448 0 17.912 14.625 32.447 35.118 32.447h577.247v-32.447z m157.474 320.429H639.057v127.981h256.454V511.854z m0 191.47H625.052c-27.331 0-49.489-17.359-49.489-63.488V497.851c0-27.325 22.158-49.483 49.489-49.483h270.459V337.18c0-27.329-22.159-49.487-49.491-49.487H126.673v527.818c0 27.329 22.159 49.486 49.49 49.486H846.02c27.332 0 49.491-22.157 49.491-49.486V703.324z"
+                      p-id="7118" fill="#8a8a8a"></path>
+            </svg>
+            <h3>我的錢包</h3>
+        </a>
+    </div>
+    <div class="item">
+        <a href="{:url('team')}">
+            <svg t="1566302015038" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10461"
+                 width="36" height="36">
+                <path d="M629.956 486.519c44.718-34.903 73.61-88.978 73.61-149.734 0-105.01-85.99-190.453-191.72-190.453s-191.72 85.444-191.72 190.453c0 60.756 28.886 114.83 73.609 149.734-117.862 46.786-201.415 161.14-201.415 294.66v63.467c0 17.554 14.295 31.75 31.943 31.75h575.16c17.653 0 31.944-14.196 31.944-31.75V781.18c0.001-133.572-83.552-247.876-201.411-294.661zM373.152 336.534c0-75.995 62.198-137.774 138.694-137.774 76.492 0 138.693 61.78 138.693 137.774 0 75.976-62.2 137.774-138.693 137.774-76.496 0-138.694-61.773-138.694-137.774z m410.165 487.78h-542.97v-33.713c0-148.708 121.79-269.705 271.523-269.705 149.68 0 271.447 120.997 271.447 269.705v33.713zM264.212 515.95l6.24-1.489c13.4-4.453 22.945-16.136 22.945-29.858 0-13.253-8.924-24.586-21.575-29.36-34.212-15.44-56.284-49.323-56.284-86.663 0-42.311 36.768-77.958 75.251-90.315 6.737-20.659 16.928-39.777 29.904-56.681a214.079 214.079 0 0 1 7.137-10.963c-2.584-0.124-5.045-0.768-7.703-0.768-88.083 0-159.775 71.196-159.775 158.728 0 40.175 15.41 77.838 41.564 106.478C118.734 517.866 64.49 603.482 64.49 700.339v49.096c0 17.553 14.296 31.745 31.944 31.745h57.25c0-21.75 2.24-35.695 6.44-56.208h-40.446V700.34c0-87.736 59.365-163.034 144.535-184.39z m557.213-40.892c26.155-28.64 41.565-66.303 41.565-106.478 0-87.533-71.67-158.756-159.776-158.756-2.66 0-5.12 0.649-7.704 0.771a213.392 213.392 0 0 1 7.137 10.963c12.978 16.904 23.167 36.022 29.881 56.683 38.484 12.352 80.57 48.004 80.57 90.314 0 37.341-22.101 71.248-56.284 86.664-12.655 4.77-21.58 16.107-21.58 29.36 0 13.723 9.574 25.406 22.946 29.853l6.24 1.493c85.199 21.38 144.536 96.655 144.536 184.413v24.632h-45.79c4.225 20.514 6.44 34.458 6.44 56.209h57.25c17.677 0 31.945-14.192 31.945-31.745v-49.096c0.052-96.856-54.193-182.472-137.376-225.28z m0 0"
+                      p-id="10462" fill="#8a8a8a"></path>
+            </svg>
+            <h3>我的團隊</h3>
+        </a>
+    </div>
+    <div class="item">
+        <a href="javascript:checkAuthToInvit();">
+            <svg t="1566302047354" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="11284"
+                 width="36" height="36">
+                <path d="M149.898 387.567H304.13c49.484 0 89.577-40.093 89.577-89.578V143.757c0-49.484-40.093-89.577-89.216-89.577H149.898c-49.485 0-89.578 40.093-89.578 89.577V297.99c0 49.485 40.455 89.578 89.578 89.578z m-13.365-243.81c0-7.224 6.14-13.364 13.365-13.364H304.13c7.224 0 13.364 6.14 13.364 13.364V297.99c0 7.224-6.14 13.365-13.364 13.365H149.898c-7.224 0-13.365-6.14-13.365-13.365V143.757zM304.491 628.487H149.898c-49.485 0-89.578 40.093-89.578 89.577v154.232c0 49.485 40.093 89.578 89.578 89.578H304.13c49.484 0 89.577-40.093 89.577-89.578V718.064c0-49.484-40.093-89.577-89.216-89.577z m13.003 243.81c0 7.223-6.14 13.364-13.364 13.364H149.898c-7.224 0-13.365-6.14-13.365-13.365V718.064c0-7.224 6.14-13.364 13.365-13.364H304.13c7.224 0 13.364 6.14 13.364 13.364v154.232zM878.798 54.18H724.566c-49.485 0-89.578 40.093-89.578 89.577V297.99c0 49.485 40.093 89.578 89.578 89.578h154.232c49.484 0 89.577-40.093 89.577-89.578V143.757c-0.36-49.484-40.454-89.577-89.577-89.577zM891.8 297.99c0 7.223-6.14 13.364-13.364 13.364H724.205c-7.224 0-13.365-6.14-13.365-13.365V143.757c0-7.224 6.14-13.364 13.365-13.364h154.232c7.224 0 13.364 6.14 13.364 13.364V297.99z"
+                      p-id="11285" fill="#8a8a8a"></path>
+                <path d="M673.998 552.274c19.866 0 36.12-15.893 35.759-36.12 0-19.866-15.893-36.12-36.12-36.12H547.578v-141.59c0-19.866-15.893-36.12-36.12-35.759-19.866 0-36.12 15.893-36.12 36.12v141.59H96.44c-19.866 0-36.12 15.893-36.12 36.12 0 19.866 15.893 36.12 36.12 36.12h379.62v169.041c0 19.866 15.893 36.12 36.12 36.12s36.12-15.893 36.12-36.12V552.635h125.698zM932.255 552.274c19.866 0 36.12-15.893 35.76-36.12 0-19.866-15.894-36.12-36.12-36.12h-79.826c-19.866 0-36.12 15.893-36.12 36.12 0 19.866 15.893 36.12 36.12 36.12h80.186zM511.82 166.874c19.865 0 36.12-15.893 36.12-36.12V88.855c0-19.866-15.893-36.12-36.12-35.759-19.867 0-36.12 15.893-36.12 36.12v41.9c0.36 19.504 16.253 35.758 36.12 35.758zM511.82 849.18c-19.867 0-36.12 15.892-36.12 36.12v41.899c0 19.866 15.892 36.12 36.12 36.12s36.12-15.893 36.12-36.12v-42.26c0-19.867-16.255-35.76-36.12-35.76zM892.885 871.574c0 7.224-6.14 13.003-13.004 13.003h-38.648v75.13h38.648c48.762 0 88.494-39.732 88.494-88.494v-43.705h-75.13v44.066z"
+                      p-id="11286" fill="#8a8a8a"></path>
+                <path d="M879.52 631.015H727.094c-48.762 0-88.494 39.732-88.494 88.494v152.426c0 48.762 39.732 88.494 88.494 88.494h38.649v-75.49h-38.649c-7.224 0-13.003-6.141-13.003-13.004V719.51c0-7.224 6.14-13.003 13.003-13.003H879.52c7.224 0 13.003 6.14 13.003 13.003v33.592h75.491v-33.592c0-48.762-39.732-88.494-88.494-88.494z"
+                      p-id="11287" fill="#8a8a8a"></path>
+            </svg>
+            <h3>邀請好友</h3>
+        </a>
+    </div>
+    <div class="item">
+        <a href="{:url('system_message')}">
+            <svg t="1566302079498" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="12118"
+                 width="36" height="36">
+                <path d="M304 431.3m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#8a8a8a" p-id="12119"></path>
+                <path d="M512 431.3m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#8a8a8a" p-id="12120"></path>
+                <path d="M720 431.3m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#8a8a8a" p-id="12121"></path>
+                <path d="M930 79.3H94c-51.9 0-94 42.1-94 94v516c0 51.9 42.1 94 94 94h216V917.6c0.4 4.1 1.6 8.3 3.9 12.1 8.2 14.3 26.7 19.2 41 11L370 932l250.6-144.7c4.6-2.6 9.7-4 15-4H930c51.9 0 94-42.1 94-94v-516c0-51.9-42.1-94-94-94z m34 610c0 18.8-15.2 34-34 34H617.9c-4 0-8.1 0.9-11.6 3h-0.1l-98.7 57L370 862.7V753.3c0-16.6-13.4-30-30-30H94c-18.8 0-34-15.2-34-34v-516c0-18.8 15.2-34 34-34h836c18.8 0 34 15.2 34 34v516z"
+                      fill="#8a8a8a" p-id="12122"></path>
+            </svg>
+            <h3>系統消息</h3>
+        </a>
+    </div>
+    <div class="item">
+        <a href="#" onclick="return tisi()">
+            <img src="/public/static/index/assets/images/pig04.png" style="width:36px;height:36px;"/>
+            <h3>实惠商城</h3>
+        </a>
+    </div>
+    <div class="item" onclick="return tisi()">
+        <a href="#">
+            <img src="/public/static/index/assets/images/myIcon08.png" style="width:36px;height:36px;"/>
+            <h3>社区助理</h3>
+        </a>
+    </div>
+    <div class="item" onclick="return tisi()">
+        <a href="#">
+            <img src="/public/static/index/assets/images/pig03.png" style="width:36px;height:36px;"/>
+            <h3>益智游戏</h3>
+        </a>
+    </div>
+</div>
+
+
+<style>
+
+    .bgfooter {
+        height: 2.13333rem;
+        background: #1E1E29;
+        position: absolute;
+        display: none;
+
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    @media screen and (min-width: 1300px) {
+        .bgfooter {
+            height: 1.06667rem
+        }
+    }
+
+    .bgfooter ul li {
+        float: left;
+        text-align: center;
+        width: 50%
+    }
+
+    .bgfooter ul li .yello {
+        color: #46B39D
+    }
+
+    .bgfooter ul li a {
+        display: inline-block;
+        cursor: pointer;
+        color: #585858;
+    }
+
+    .bgfooter ul li a .icon {
+        margin-top: .128rem
+    }
+
+    @media screen and (min-width: 1300px) {
+        .bgfooter ul li a .icon {
+            margin-top: .04267rem
+        }
+    }
+
+    .bgfooter ul li a .icon .iconfont {
+        font-size: 1.06667rem
+    }
+
+    @media screen and (min-width: 1300px) {
+        .bgfooter ul li a .icon .iconfont {
+            font-size: .59733rem
+        }
+    }
+
+    .bgfooter ul li a .icon p {
+        font-size: .55467rem;
+        margin-top: .21333rem
+    }
+
+    .footer ul li {
+        width: 33.33% !important
+    }
+
+    @media screen and (min-width: 1300px) {
+        .bgfooter ul li a .icon p {
+            font-size: .29867rem;
+            margin-top: .08533rem
+        }
+    }
+
+
+</style>
+
+<div class="foohi">
+    <div class="footer">
+        <ul>
+            <li>
+                <a href="{:url('index/index')}">
+                    <div class="icon">
+                        <i class="icon-gongneng iconfont"></i>
+                        <p style=" color: #46b39d; ">宠物集市</p>
+                    </div>
+                </a>
+            </li>
+
+            <li>
+                <a style="color:#fff" href="{:url('service/index')}">
+                    <div class="icon">
+                        <svg t="1566229307463" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                             p-id="2142" width="22" height="22">
+                            <path d="M753.266187 77.352518A270.218129 270.218129 0 0 0 512 230.510504 270.218129 270.218129 0 0 0 270.733813 77.352518C121.480288 77.352518 0 203.105612 0 357.663309c0 240.750504 257.841727 460.431655 498.444892 585.669065a29.467626 29.467626 0 0 0 27.110216 0c240.971511-125.23741 498.444892-344.918561 498.444892-585.669065 0-154.557698-121.480288-280.310791-270.733813-280.310791zM512 884.028777C299.906763 770.431079 58.935252 567.767482 58.935252 357.663309c0-122.06964 95.033094-221.007194 211.798561-221.007194S482.532374 235.741007 482.532374 357.663309a29.467626 29.467626 0 0 0 58.935252 0c0-122.06964 95.033094-221.007194 211.798561-221.007194S965.064748 235.741007 965.064748 357.663309c0 210.104173-240.971511 412.76777-453.064748 526.365468z"
+                                  fill="#46b39d" p-id="2143"></path>
+                            <path d="M706.633669 451.591367L512 656.686043 317.366331 451.591367a29.467626 29.467626 0 1 0-42.728058 40.517986L490.635971 719.746763a29.467626 29.467626 0 0 0 42.728058 0l215.997698-227.63741a29.467626 29.467626 0 1 0-42.728058-40.517986z"
+                                  fill="#46b39d" p-id="2144"></path>
+                        </svg>
+                        <p style=" color: #46b39d; ">服務中心</p>
+                    </div>
+                </a>
+            </li>
+
+            <li>
+                <a href="{:url('user/index')}" class="yello">
+                    <div class="icon">
+                        <i class="icon-my iconfont" style=" color: #fff; "></i>
+                        <p style=" color: #fff; ">个人中心</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+
+<script>
+
+    function tisi() {
+        layer.open({
+            content: '倾情开发中!'
+            , skin: 'msg'
+            , time: 2 //2秒后自动关闭
+        })
+    }
+
+    function checkAuth() {
+        local_ajax('/index/User/isAuthApi', {}, 'get', function (res) {
+            if (res.data.hasBank == 1) {
+                if (res.data.isStatus == 1) {
+                    layer.open({
+                        content: '你已经认证过了!'
+                        , skin: 'msg'
+                        , time: 1 //2秒后自动关闭
+                    })
+                } else if (res.data.isStatus == 0) {
+                    layer.open({
+                        content: '實名審核中!'
+                        , skin: 'msg'
+                        , time: 1 //2秒后自动关闭
+                    })
+                } else {
+                    window.location.href = "{:url('authentication')}";
+                }
+            } else {
+                // layer.open({
+                //     content: '請先在我的錢包中添加銀行卡!'
+                //     ,skin: 'msg'
+                //     ,time: 1 //2秒后自动关闭
+                // })
+            }
+        });
+    }
+
+    function checkAuthToInvit() {
+        local_ajax('/index/User/isAuthApi', {}, 'get', function (res) {
+            if (res.data.hasBank == 1) {
+                if (res.data.isAuth == 1) {
+                    window.location.href = "{:url('invitation')}";
+                } else if (res.data.isStatus == 0) {
+                    layer.open({
+                        content: '實名審核中!'
+                        , skin: 'msg'
+                        , time: 1 //2秒后自动关闭
+                    })
+                } else {
+                    layer.open({
+                        content: '請先實名!'
+                        , skin: 'msg'
+                        , time: 1 //2秒后自动关闭
+                    })
+                }
+            } else {
+                layer.open({
+                    content: '請先實名!'
+                    , skin: 'msg'
+                    , time: 1 //2秒后自动关闭
+                })
+            }
+        });
+    }
+
+    var ifcanload = 0;
+    function weburlview(weburls, id) {
+        if (1 == 1) {
+            //ifcanload = 1;
+
+            var page = plus.webview.getWebviewById(id);
+            if (page) {
+                //
+                var nwaiting = plus.nativeUI.showWaiting();//显示原生等待框
+
+
+                var curdoghomeviewurl = page.getURL();
+                if (curdoghomeviewurl == weburls) {
+                    page.reload(true);
+                    page.show();
+                    nwaiting.close();
+                    //page.show();
+                }
+                else {
+                    //page.destroy();
+                    location.href = weburls;
+                    //page.loadURL(weburls);
+                    //page.show();
+                    nwaiting.close();
+
+                }
+
+
+                //page.reload(true);
+                //if (id == "dogmarket")
+                //{
+                //    ajaxshowdoglist();
+                //}
+                //page.show();
+            }
+            else {
+                var nwaiting = plus.nativeUI.showWaiting();//显示原生等待框
+                var webview = plus.webview.create(weburls, id, {statusbar: {background: '#272834'}});//后台创建webview并打开show.html
+                webview.addEventListener("loaded", function () { //注册新webview的载入完成事件
+                    nwaiting.close(); //新webview的载入完毕后关闭等待框
+                    //ifcanload = 0;
+                    webview.show();//把新webview窗体显示出来，显示动画效果为速度150毫秒的右侧移入动画
+                }, false);
+            }
+        }
+        else {
+
+        }
+
+
+    }
+
+</script>
+
+</body>
+</html>

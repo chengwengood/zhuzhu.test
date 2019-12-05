@@ -1,0 +1,135 @@
+{extend name="base" /}
+{block name="body"}
+<link type="text/css" rel="stylesheet" href="/public/static/admin/jedate/test/jeDate-test.css">
+<link type="text/css" rel="stylesheet" href="/public/static/admin/jedate/skin/jedate.css">
+<script type="text/javascript" src="/public/static/admin/jedate/src/jedate.js"></script>
+<div class="layui-body">
+    <!--tab标签-->
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li class=""><a href="{:url('admin/Task/pigOrder')}">订单管理</a></li>
+            <li class="layui-this">个人抢单管理</li>
+        </ul>
+        <div class="layui-tab-content">
+
+            <form class="layui-form layui-form-pane" action="{:url('admin/Task/taskMyorder')}" method="get">
+                <div class="layui-inline">
+                    <label class="layui-form-label">用户账户</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="username" value="{$Think.request.username}" placeholder="请输入用户账户" class="layui-input">
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="layui-inline">
+                    <label class="layui-form-label">请选择开始时间</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="start_time" id="start-time"  value="{$Think.request.start_time}" placeholder="开始时间" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">请选择结束时间</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="end_time" id="end-time" value="{$Think.request.end_time}" placeholder="结束时间" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <button class="layui-btn">搜索</button>
+                </div>
+                <div class="layui-inline" style="margin-left:50px;">
+                    <label class="layui-form-label">总金额</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="total_sum" id="total_sum" value="{$total_sum}"  class="layui-input"   readonly="readonly">
+                </div>
+            </div>
+            </form>
+
+            <hr>
+            <div class="layui-tab-item layui-show">
+                <table class="layui-table">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>买家手机</th>
+                        <th>卖家手机</th>
+                        <th>龟等级</th>
+                        <th>价格</th>
+                        <th>付款凭证</th>
+                        <th>交易状态</th>
+                        <th>订单状态</th>
+                        <th>购买时间</th>
+                        <th>成交时间</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <notempty name="orderlist">
+                        <tbody>
+                            {foreach name="orderlist" item="vo"}
+                            {if condition="$vo.id eq 0"}
+                            {else/}
+                                <tr>
+                                    <td>{$vo.id}</td>
+                                    <td>{$vo.buy_mobile}</td>
+                                    <td>{$vo.sell_mobile}</td>
+                                    <td>{$vo.pig_name}</td>
+                                    <td>{$vo.price}</td>
+                                    <td><img src="{$vo.voucher}" alt="" style="width: 60px;height: 40px" onclick="previewImg(this)"></td>
+                                    <td>
+                                        {switch name="$vo.status"}
+                                        {case value="1"}未付款</a>{/case}
+                                        {case value="2"}已付款{/case}
+                                        {case value="3"}已完成{/case}
+                                        {case value="4"}已取消{/case}
+                                        {/switch}
+                                    </td>
+                                    <td>
+                                        {switch name="$vo.is_lock"}
+                                        {case value="0"}正常</a>{/case}
+                                        {case value="1"}冻结{/case}
+
+                                        {/switch}
+                                    </td>
+                                    <td>{$vo.create_time|date="Y-m-d H:i:s",###}</td>
+                                    <td>
+                                        {if condition="$vo['update_time'] neq ''"}
+                                        {$vo.update_time|date="Y-m-d H:i:s",###}
+                                        {/if}
+                                    </td>
+                                    <td>
+                                        {if condition="$vo.is_lock eq 1"}
+                                        <a href="{:url('orderUnlock',['order_id'=>$vo['id']])}" class="layui-btn-normal layui-btn jh-btn">解冻</a>
+                                        {/if}
+                                        {switch name="$vo.status"}
+                                        {case value="1"}<a href="{:url('orderDel',['order_id'=>$vo['id']])}" class="layui-btn layui-btn-danger jh-btn">取消</a>{/case}
+                                        {case value="2"}<a href="{:url('orderConfirm',['order_id'=>$vo['id']])}" class="layui-btn-normal layui-btn jh-btn"> 确认</a>{/case}
+                                        {case value="3"}<a>已完成</a>{/case}
+                                        {case value="4"}<a>已取消</a>{/case}
+                                        {/switch}
+
+                                    </td>
+                                </tr>
+                            {/if}
+                            {/foreach}
+                        </tbody>
+                    </notempty>
+                </table>
+                <!--分页-->
+
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="script"}
+<script>
+    high_nav("{:url('pigOrder')}");
+    jeDate("#start-time",{
+        isinitVal:false,
+        format:"YYYY-MM-DD"
+    });
+    jeDate("#end-time",{
+        isinitVal:false,
+        format:"YYYY-MM-DD"
+    });
+</script>
+{/block}

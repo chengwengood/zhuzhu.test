@@ -1,0 +1,187 @@
+<html lang="en" class="wrapperContent pixel-ratio-3 retina ios ios-11 ios-11-0 ios-gt-10 ios-gt-9 ios-gt-8 ios-gt-7 ios-gt-6">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,minimum-scale=1,maximum-scale=1,viewport-fit=cover">
+<link rel="stylesheet" href="/public/static/hdindex/assets/css/zpui.css"/>
+
+<link rel="stylesheet" href="/public/static/hdindex/assets/css/all_black.css"/>
+        <title>
+            系统消息
+        </title>
+        <script type="text/javascript" src="/public/style/assets/js/jquery-2.1.4.js"></script>
+        <link href="/public/style/static/css/app.1f727e82.css" rel="preload" as="style">
+        <link href="/public/style/static/css/chunk-vendors.44af1fed.css" rel="preload" as="style">
+        <link href="/public/style/static/css/chunk-vendors.44af1fed.css" rel="stylesheet" type="text/css">
+        <link href="/public/style/static/css/app.1f727e82.css" rel="stylesheet" type="text/css">
+        <link href="/public/style/assets/css/layer.css?2.0" type="text/css" rel="styleSheet" id="layermcss">
+    </head>
+    <body class="wrapperContent">
+        <div class="wrapperContent">
+            <div data-v-2045875e="" id="app" class="wrapperContent">
+                <div data-v-2045875e="" id="wrap" style="z-index: 1000000; right: -25px; top: 8px;">
+                    <div data-v-2045875e="" id="google_translate_element"></div>
+                </div>
+                <div data-v-2045875e="" class="page news">
+                    <div data-v-2045875e="" class="page-hd">
+                        <div data-v-2045875e="" class="header bor-1px-b">
+                            <div data-v-2045875e="" class="header-left">
+                                <a href="javascript:history.go(-1)" ><svg t="1566814134916" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1979" width="28" height="28"><path d="M624.788992 204.047974 585.205965 164.464026 219.560038 530.185011 585.205965 895.864013 624.788992 856.280986 298.663014 530.16105Z" p-id="1980" fill="#ffffff"></path></svg></a>
+                            </div>
+                            <div data-v-2045875e="" class="header-title">
+                                系统消息
+                            </div>
+                            <div data-v-2045875e="" class="header-right">
+                                <a data-v-2045875e="" href="#"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-v-2045875e="" class="page-bd">
+                        <div data-v-2045875e="" class="weui-tab">
+                            <div data-v-2045875e="" class="weui-navbar">
+                                <a data-v-2045875e="" href="javascript:void(0);" id="tab11" class="weui-navbar__item weui-bar__item--on color_9">全部消息</a><a data-v-2045875e="" id="tab12" href="javascript:void(0);" class="weui-navbar__item color_9">系统消息</a><a data-v-2045875e="" id="tab13" href="javascript:void(0);" class="weui-navbar__item color_9">活动通知</a>
+                            </div>
+                            <div data-v-2045875e="" class="weui-tab__bd">
+
+                                <div data-v-2045875e="" id="tab1" class="weui-tab__bd-item weui-tab__bd-item--active">
+                                    <div data-v-2045875e="" class="van-list">
+                                         {volist name="newslist" id="news"}
+                                        <div data-v-2045875e="" class="Box">
+                                            <div data-v-2045875e="" class="titie fs26 color_3 bor_b fw_b">
+                                                {$news.title} :{$news.create_time|date='Y-m-d H:i:s',###}
+                                            </div>
+                                            <div data-v-2045875e="" class="content fs26 color_3 test cli_box box_show">
+                                                 {$news.content|htmlspecialchars_decode}
+                                            </div>
+                                            <div data-v-2045875e="" class="more fs24 color_9 cli_show">
+                                                <div data-v-2045875e="" class="moreBox">
+                                                    <span data-v-2045875e="">点击查看更多</span><img data-v-2045875e="" src="/public/style/static/img/xia.png" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                         {/volist}
+                                
+
+                                    </div><!---->
+                                </div>
+
+                                <div data-v-2045875e="" id="tab2" class="weui-tab__bd-item weui-tab__bd-item--active" style="display: none;">
+                                    <div data-v-2045875e="" class="van-list">
+                                         {volist name="newslist" id="news"}
+                                          {eq name="news.cate" value="1"}
+                                        <div data-v-2045875e="" class="Box">
+                                            <div data-v-2045875e="" class="titie fs26 color_3 bor_b fw_b">
+                                                {$news.title}
+                                            </div>
+                                            <div data-v-2045875e="" class="content fs26 color_3 test cli_box box_show">
+                                                 {$news.content|htmlspecialchars_decode}
+                                            </div>
+                                            <div data-v-2045875e="" class="more fs24 color_9 cli_show">
+                                                <div data-v-2045875e="" class="moreBox">
+                                                    <span data-v-2045875e="">点击查看更多</span><img data-v-2045875e="" src="/public/style/static/img/xia.png" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {/eq}
+                                         {/volist}
+                                    
+                                        
+     
+
+                                    </div><!---->
+                                </div>
+                                    <div data-v-2045875e="" id="tab3" class="weui-tab__bd-item weui-tab__bd-item--active" style="display: none;">
+                                    <div data-v-2045875e="" class="van-list">
+                                        
+                                        {volist name="newslist" id="news"}
+                                         {eq name="news.cate" value="2"}
+                                           <div data-v-2045875e="" class="Box">
+                                               <div data-v-2045875e="" class="titie fs26 color_3 bor_b fw_b">
+                                                   {$news.title}
+                                               </div>
+                                               <div data-v-2045875e="" class="content fs26 color_3 test cli_box box_show">
+                                                    {$news.content|htmlspecialchars_decode}
+                                               </div>
+                                               <div data-v-2045875e="" class="more fs24 color_9 cli_show">
+                                                   <div data-v-2045875e="" class="moreBox">
+                                                       <span data-v-2045875e="">点击查看更多</span><img data-v-2045875e="" src="/public/style/static/img/xia.png" alt="">
+                                                   </div>
+                                               </div>
+                                           </div>
+                                            {/eq}
+                                            {/volist}
+                                
+     
+
+                                    </div><!---->
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <script type="text/javascript">
+      $('#tab11').click(function () {
+        $('#tab11').removeClass('weui-bar__item--on');
+        $('#tab11').addClass('weui-bar__item--on');
+        $('#tab12').removeClass('weui-bar__item--on');
+        $('#tab13').removeClass('weui-bar__item--on');
+      $('#tab1').show();
+      $('#tab2').hide();
+      $('#tab3').hide();
+  })
+  $('#tab12').click(function () {
+    $('#tab12').removeClass('weui-bar__item--on');
+    $('#tab11').removeClass('weui-bar__item--on');
+    $('#tab12').addClass('weui-bar__item--on');
+    $('#tab13').removeClass('weui-bar__item--on');
+      $('#tab2').show();
+      $('#tab1').hide();
+      $('#tab3').hide();
+  })
+  $('#tab13').click(function () {
+    $('#tab13').removeClass('weui-bar__item--on');
+    $('#tab11').removeClass('weui-bar__item--on');
+    $('#tab12').removeClass('weui-bar__item--on');
+    $('#tab13').addClass('weui-bar__item--on');
+      $('#tab3').show();
+      $('#tab2').hide();
+      $('#tab1').hide();
+  })
+
+            $(".moreBox").click(function(){
+             var content = $(this).parents('.Box').find('.content');
+             if(content.hasClass('box_show')){
+                $(this).parents('.Box').find('.content').removeClass('box_show');
+                $(this).html('<span data-v-2045875e="">收回信息</span><img data-v-2045875e="" src="/public/style/static/img/xia.png" alt="">');
+             }else{
+               $(this).parents('.Box').find('.content').addClass('box_show');
+                $(this).html('<span data-v-2045875e="">点击查看更多</span><img data-v-2045875e="" src="/public/style/static/img/xia.png" alt="">');
+             }  
+
+            });
+        </script>
+        <!--
+        <div id="xianlu"><div class="floatBtn"></div></div>
+        <script type="text/javascript">
+                    $("#xianlu").click(function(){
+                       var html ='<iframe src="{:url(\'Xian/index\')}" frameborder="0" id="contentIframe" style="width: 100%;height: 100%;z-index: 2005;position: fixed;bottom: 0px;right: 0;"></iframe>';
+                       $(this).html(html);
+                         $("#contentIframe").on("load", function(event){
+                          　　$("#divId",this.contentDocument).click();
+                             $("#divId",this.contentDocument).css('z-index',-2222222);
+                             $(".close",this.contentDocument).click(function(){
+                                $("#xianlu").html('<div class="floatBtn"></div>');
+                             });
+                             $(".ok",this.contentDocument).click(function(){
+                                $("#xianlu").html('<div class="floatBtn"></div>');
+                             });
+                          });
+                    });
+        </script>-->
+    </body>
+</html>

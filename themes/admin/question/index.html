@@ -1,0 +1,62 @@
+{extend name="base" /}
+{block name="body"}
+<div class="layui-body">
+    <!--tab标签-->
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li class="layui-this">工单管理</li>
+        </ul>
+        <div class="layui-tab-content">
+            <hr>
+
+            <form action="" method="post" class="ajax-form">
+                <div class="layui-tab-item layui-show">
+                    <table class="layui-table">
+                        <thead>
+                        <tr>
+                            <th style="width: 15px;"><input type="checkbox" class="check-all"></th>
+                            <th style="width: 30px;">ID</th>
+                            <th>工单类型</th>
+                            <th>手机号</th>
+                            <th>内容</th>
+                            <th>发布时间</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {foreach name="list" item="vo"}
+                        <tr>
+                            <td><input type="checkbox" name="ids[]" value="{$vo.id}"></td>
+                            <td>{$vo.id}</td>
+                            <td>
+                            {if condition="$vo['type'] eq 1"}领养问题{/if}
+                            {if condition="$vo['type'] eq 2"}充值问题{/if}
+                            {if condition="$vo['type'] eq 3"}账户问题{/if}
+                            {if condition="$vo['type'] eq 4"}实名问题{/if}
+                            {if condition="$vo['type'] eq 5"}其他问题{/if}
+                            {if condition="$vo['type'] eq 6"}社区问题{/if}
+                        </td>
+                            <td>{$vo.mobile}</td>
+                            <td>{$vo.content}</td>
+                            <td>{$vo.publish_time|date='Y-m-d H:i:s',###}</td>
+                            <td>
+                                <a href="{:url('edit',['id'=>$vo['id']])}" class="layui-btn layui-btn-normal layui-btn-mini">回复</a>
+                                <a href="{:url('del',['id'=>$vo['id']])}" class="layui-btn layui-btn-danger layui-btn-mini ajax-delete">删除</a>
+                            </td>
+                        </tr>
+                        {/foreach}
+                        </tbody>
+                    </table>
+                    <!--分页-->
+                    {$list->render()}
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="script"}
+<script>
+    high_nav("{:url('index')}");
+</script>
+{/block}

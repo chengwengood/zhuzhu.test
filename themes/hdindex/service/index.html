@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="UTF-8" />
+
+    <title>服务中心</title>
+
+    <style>
+
+
+
+        html {
+
+            font-size: 6.25vw!important;
+
+            overflow: hidden;
+
+        }
+
+        .footer, .top_fixed{-webkit-transform: translateZ(0);
+
+        }
+
+    </style>
+
+     <link rel="stylesheet" href="/public/style/assets/css/style.css"/>
+
+    <link rel="stylesheet" type="text/css" href="https://block-dog.oss-cn-beijing.aliyuncs.com/template/mobile/block/static/css/iconfont.css?v1.1"/>
+
+    <script src="https://block-dog.oss-cn-beijing.aliyuncs.com/template/mobile/block/static/js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+
+    <!--<script src="https://block-dog.oss-cn-beijing.aliyuncs.com/template/mobile/block/static/js/mobile-util.js" type="text/javascript" charset="utf-8"></script>-->
+
+    <script src="https://block-dog.oss-cn-beijing.aliyuncs.com/public/js/global4.js?v1.11"></script>
+
+    <script src="https://block-dog.oss-cn-beijing.aliyuncs.com/public/js/layer/mobile/layer.js"  type="text/javascript" ></script>
+
+    <script src="https://block-dog.oss-cn-beijing.aliyuncs.com/public/js/dropload.min.js"></script>
+
+    <script src="https://block-dog.oss-cn-beijing.aliyuncs.com/template/mobile/block/static/js/common14.js?v=1.82"  type="text/javascript" ></script>
+
+    <meta name="referrer" content="no-referrer">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+
+
+
+
+
+</head>
+
+<body class="g4">
+
+
+
+<div class="top_fixed">
+
+
+
+    <div class="classreturn loginsignup ">
+
+        <div class="content">
+
+            <div class="ds-in-bl return">
+
+                <a href="javascript:history.go(-1)" ><svg t="1566814134916" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1979" width="28" height="28"><path d="M624.788992 204.047974 585.205965 164.464026 219.560038 530.185011 585.205965 895.864013 624.788992 856.280986 298.663014 530.16105Z" p-id="1980" fill="#ffffff"></path></svg></a>
+
+            </div>
+
+            <div class="ds-in-bl search center">
+
+                <span>服务中心</span>
+
+            </div>
+
+            <div class="ds-in-bl menu">
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <style>
+        .mui-content ul li{width:50%; float:left;text-align: center;padding-top:6%;background: #3B3E46;border-bottom: 1px solid #272834;
+            border-right: 1px solid #272834;}
+        .mui-content ul li p{    color: #E0E0E0;margin-top: 5px;}
+        .mui-content ul li a span{    color: #43AC97;font-size: 1.5rem}
+       /*  body{
+            background-image: url(https://img.alicdn.com/imgextra/i4/2201464452953/O1CN01HCWU9o1XgW8VOUJ7x_!!2201464452953.png);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-attachment:fixed;
+        } */
+        .footer ul li a .icon p {      color: #46b39d;}
+        .footer ul li a.yello{color: #46B39D!important;}
+        .footer ul li a.yello p{color: #fff!important;}
+
+        .mui-content{margin-top:2.6rem}
+        .grid_menu .item {width:50%}
+        .box{width: 80%;margin: 30px auto;}
+        .list{float: left;height: 36px;color: #E0E0E0;width: 48%;border-bottom: 1px solid #272834;border-right: 1px solid #272834;text-align: center;background: #3b3e46;margin-bottom: 30px;border-radius: 10px;}
+        .list h3 {color: #E0E0E0;line-height: 36px;font-weight: 400;font-size: 14px;}
+        .leftr{margin-left: 4%;}
+        .center{clear: both;color: #E0E0E0;font-size: 23px;}
+        .qindex{display: block;clear: both;width: 80%;line-height: 36px;margin: 80px auto 30px auto;color: #E0E0E0;font-size: 17px;border-bottom: 1px solid #272834;cursor: pointer;border-right: 1px solid #272834;text-align: center;background: #495269;margin-bottom: 30px;border-radius: 20px;}
+    </style>
+
+</div>
+
+
+
+<div class="bg_white" style="margin-top: 2rem;">
+
+    <div class="mui-content">
+
+        <div class="grid_menu" style="margin-top: 0.1rem;">
+
+            <div class="item">
+
+                <a href="{:url('qindex')}">
+
+                    <svg t="1566232156554" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3221" width="30" height="30"><path d="M276.658 358.931h476.213V302.24H276.658v56.692z m0 181.415h476.213v-56.692H276.658v56.692z m0 175.745h476.213V659.4H276.658v56.692zM333.35 64.133H214.297c-68.03 0-119.053 51.023-119.053 119.053v657.628c0 68.03 51.022 119.053 119.053 119.053h595.266c68.03 0 119.054-51.023 119.054-119.053V183.186c0-68.03-51.023-119.053-119.054-119.053H696.18v56.692h113.384c34.016 0 62.362 28.346 62.362 62.361v657.628c0 34.015-28.346 62.361-62.362 62.361H214.297c-34.015 0-62.361-28.346-62.361-62.361V183.186c0-34.015 28.346-62.361 62.36-62.361H333.35V64.133z m62.361 56.692h238.107V64.133H395.711z" p-id="3222" fill="#44a18f"></path></svg>
+
+                    <h3>我的工单</h3>
+
+                </a>
+
+            </div>
+            <div class="item">
+
+                <a href="call_center.html">
+
+                    <i class="iconfont icon-iconfontmark c2"></i>
+
+                    <h3>线上客服</h3>
+
+                </a>
+
+            </div>
+        </div>
+         <center class="center">问题反馈</center>
+         <div class="box">
+            <div class="list">
+                <a href="{:url('question',['type'=>1])}">
+                    <i></i>
+                    <h3>领养问题</h3>
+                </a>
+            </div>
+            <div class="list leftr">
+                <a href="{:url('question',['type'=>2])}">
+                    <i></i>
+                    <h3>充值问题</h3>
+                </a>
+            </div>
+            
+            <div class="list">
+                <a href="{:url('question',['type'=>3])}">
+                    <i></i>
+                    <h3>账户问题</h3>
+                </a>
+            </div>
+            <div class="list leftr">
+                <a href="{:url('question',['type'=>4])}">
+                    <i></i>
+                    <h3>实名问题</h3>
+                </a>
+            </div>
+            <div class="list ">
+                <a href="{:url('question',['type'=>5])}">
+                    <i></i>
+                    <h3>其他问题</h3>
+                </a>
+            </div>
+           
+            <div class="list leftr">
+                <a href="{:url('question',['type'=>6])}">
+                    <i></i>
+                    <h3>社区问题</h3>
+                </a>
+            </div>
+            
+        </div>
+        <!--a class="qindex" href="{:url('qindex')}">我的工单</a-->
+    </div>
+
+</div>
+
+<!--底部导航-start-->
+
+<style>
+
+    .bgfooter {
+        height: 2.13333rem;
+        background: #1E1E29;
+        position: absolute;display:none;
+
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    @media screen and (min-width: 1300px) {
+        .bgfooter {
+            height: 1.06667rem
+        }
+    }
+
+    .bgfooter ul li {
+        float: left;
+        text-align: center;
+        width: 50%
+    }
+
+    .bgfooter ul li .yello {
+        color: #46B39D
+    }
+
+    .bgfooter ul li a {
+        display: inline-block;
+        cursor: pointer;
+        color: #585858;
+    }
+
+    .bgfooter ul li a .icon {
+        margin-top: .128rem
+    }
+
+    @media screen and (min-width: 1300px) {
+        .bgfooter ul li a .icon {
+            margin-top: .04267rem
+        }
+    }
+
+    .bgfooter ul li a .icon .iconfont {
+        font-size: 1.06667rem
+    }
+
+    @media screen and (min-width: 1300px) {
+        .bgfooter ul li a .icon .iconfont {
+            font-size: .59733rem
+        }
+    }
+
+    .bgfooter ul li a .icon p {
+        font-size: .55467rem;
+        margin-top: .21333rem
+    }
+    .footer ul li{width:33.33%!important}
+    @media screen and (min-width: 1300px) {
+        .bgfooter ul li a .icon p {
+            font-size: .29867rem;
+            margin-top: .08533rem
+        }
+    }
+
+
+</style>
+
+
+
+<div class="foohi">
+
+    <div class="footer">
+
+        <ul>
+
+            <li>
+
+                <a  href="{:url('index/index')}">
+
+                    <div class="icon">
+
+                        <i class="icon-gongneng iconfont"></i>
+                      <p>宠物集市</p>
+
+                    </div>
+
+                </a>
+
+            </li>
+
+
+
+            <li>
+
+                <a style="color:#fff" href="{:url('service/index')}"  class="yello" >
+
+                    <div class="icon">
+
+                        <svg t="1566229307463" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2142" width="22" height="22"><path d="M753.266187 77.352518A270.218129 270.218129 0 0 0 512 230.510504 270.218129 270.218129 0 0 0 270.733813 77.352518C121.480288 77.352518 0 203.105612 0 357.663309c0 240.750504 257.841727 460.431655 498.444892 585.669065a29.467626 29.467626 0 0 0 27.110216 0c240.971511-125.23741 498.444892-344.918561 498.444892-585.669065 0-154.557698-121.480288-280.310791-270.733813-280.310791zM512 884.028777C299.906763 770.431079 58.935252 567.767482 58.935252 357.663309c0-122.06964 95.033094-221.007194 211.798561-221.007194S482.532374 235.741007 482.532374 357.663309a29.467626 29.467626 0 0 0 58.935252 0c0-122.06964 95.033094-221.007194 211.798561-221.007194S965.064748 235.741007 965.064748 357.663309c0 210.104173-240.971511 412.76777-453.064748 526.365468z" fill="#ffffff" p-id="2143"></path><path d="M706.633669 451.591367L512 656.686043 317.366331 451.591367a29.467626 29.467626 0 1 0-42.728058 40.517986L490.635971 719.746763a29.467626 29.467626 0 0 0 42.728058 0l215.997698-227.63741a29.467626 29.467626 0 1 0-42.728058-40.517986z" fill="#ffffff" p-id="2144"></path></svg>
+                        <p>服務中心</p>
+
+                    </div>
+
+                </a>
+
+            </li>
+
+
+
+            <li>
+
+                <a href="{:url('user/index')}">
+
+                    <div class="icon">
+
+                        <i class="icon-my iconfont"></i>
+
+                        <p>个人中心</p>
+
+                    </div>
+
+                </a>
+
+            </li>
+
+        </ul>
+
+    </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+
+
+
+
+
+
+    var ifcanload = 0;
+
+    function weburlview(weburls,id)
+
+    {
+
+        if (1==1) {
+
+            //ifcanload = 1;
+
+
+
+            var page = plus.webview.getWebviewById(id);
+
+            if (page) {
+
+                //
+
+                var nwaiting = plus.nativeUI.showWaiting();//显示原生等待框
+
+
+
+
+
+
+
+
+
+                var curdoghomeviewurl = page.getURL();
+
+                if (curdoghomeviewurl == weburls) {
+
+                    page.reload(true);
+
+                    page.show();
+
+                    nwaiting.close();
+
+                    //page.show();
+
+                }
+
+                else {
+
+                    //page.destroy();
+
+                    location.href = weburls;
+
+                    //page.loadURL(weburls);
+
+                    //page.show();
+
+                    nwaiting.close();
+
+
+
+                }
+
+
+
+
+
+
+
+                //page.reload(true);
+
+                //if (id == "dogmarket")
+
+                //{
+
+                //    ajaxshowdoglist();
+
+                //}
+
+                //page.show();
+
+            }
+
+            else {
+
+                var nwaiting = plus.nativeUI.showWaiting();//显示原生等待框
+
+                var webview = plus.webview.create(weburls, id, { statusbar: { background: '#272834' } });//后台创建webview并打开show.html
+
+                webview.addEventListener("loaded", function () { //注册新webview的载入完成事件
+
+                    nwaiting.close(); //新webview的载入完毕后关闭等待框
+
+                    //ifcanload = 0;
+
+                    webview.show();//把新webview窗体显示出来，显示动画效果为速度150毫秒的右侧移入动画
+
+                }, false);
+
+            }
+
+        }
+
+        else
+
+        {
+
+
+
+        }
+
+
+
+
+
+    }
+
+
+
+</script>
+
+<!--底部导航-end-->
+
+</body>
+
+</html>

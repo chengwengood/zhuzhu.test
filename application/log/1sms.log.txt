@@ -1,0 +1,79 @@
+array (
+  'Message' => '短信内容非法',
+  'RequestId' => 'DE0CA120-65EE-4A8C-9704-978C22014212',
+  'Code' => 'isv.SMS_CONTENT_ILLEGAL',
+)array (
+  'Message' => '签名不合法(不存在或被拉黑)',
+  'RequestId' => 'B5384EB5-5B44-4C8B-ADCE-9D6612E38788',
+  'Code' => 'isv.SMS_SIGNATURE_ILLEGAL',
+)array (
+  'Message' => '签名不合法(不存在或被拉黑)',
+  'RequestId' => 'E252ED63-C625-462D-A343-D9BAF3EB776A',
+  'Code' => 'isv.SMS_SIGNATURE_ILLEGAL',
+)array (
+  'Message' => '签名不合法(不存在或被拉黑)',
+  'RequestId' => '7CC858C4-05DF-4577-B22E-B42B94B7C0AC',
+  'Code' => 'isv.SMS_SIGNATURE_ILLEGAL',
+)array (
+  'Message' => '签名不合法(不存在或被拉黑)',
+  'RequestId' => '9C6A63FB-DAE3-49AA-BCD8-E9D88A86B775',
+  'Code' => 'isv.SMS_SIGNATURE_ILLEGAL',
+)array (
+  'Message' => '签名不合法(不存在或被拉黑)',
+  'RequestId' => '90EBAADE-13BA-4424-B8F2-32C5D61480B5',
+  'Code' => 'isv.SMS_SIGNATURE_ILLEGAL',
+)array (
+  'Message' => '签名不合法(不存在或被拉黑)',
+  'RequestId' => 'F48FF142-BF65-432F-8E11-5D8EEF1A5261',
+  'Code' => 'isv.SMS_SIGNATURE_ILLEGAL',
+)array (
+  'Message' => '签名不合法(不存在或被拉黑)',
+  'RequestId' => '53C5A525-760F-465F-A125-E891F83DACA7',
+  'Code' => 'isv.SMS_SIGNATURE_ILLEGAL',
+)array (
+  'Message' => 'OK',
+  'RequestId' => '1DA00EBF-3EBD-4E0E-8DFD-67558494332B',
+  'BizId' => '502114565050852657^0',
+  'Code' => 'OK',
+)array (
+  'Message' => '短信内容非法',
+  'RequestId' => 'C16A1F22-3740-4D64-B78B-990D34D87A3D',
+  'Code' => 'isv.SMS_CONTENT_ILLEGAL',
+)array (
+  'Message' => '短信内容非法',
+  'RequestId' => '1D6228C4-FE49-4561-BB1F-0DB58F2C5E23',
+  'Code' => 'isv.SMS_CONTENT_ILLEGAL',
+)array (
+  'Message' => '短信内容非法',
+  'RequestId' => 'A1461FC4-4500-47FD-B357-4D5FA420F5B6',
+  'Code' => 'isv.SMS_CONTENT_ILLEGAL',
+)array (
+  'Message' => '短信内容非法',
+  'RequestId' => 'C87A3D42-392A-4F0C-8C4E-4A60C842FAC6',
+  'Code' => 'isv.SMS_CONTENT_ILLEGAL',
+)array (
+  'Message' => '短信内容非法',
+  'RequestId' => 'C0FD9779-30FB-4CDF-9E32-7EBE6838EF6C',
+  'Code' => 'isv.SMS_CONTENT_ILLEGAL',
+)array (
+  'Message' => 'OK',
+  'RequestId' => '6CB0F7DD-CF22-4CA0-98B9-837D0D6BA9DD',
+  'BizId' => '633615565056187999^0',
+  'Code' => 'OK',
+)array (
+  'Message' => '短信内容非法',
+  'RequestId' => '0D93394A-CC66-4D6D-992D-A5D241D4FFC6',
+  'Code' => 'isv.SMS_CONTENT_ILLEGAL',
+)array (
+  'Message' => '短信内容非法',
+  'RequestId' => '016E40BE-ADF3-4AFE-B813-F4BF053636B5',
+  'Code' => 'isv.SMS_CONTENT_ILLEGAL',
+)array (
+  'Message' => '短信内容非法',
+  'RequestId' => '3AFB771F-E708-4BED-9C39-2B553857796A',
+  'Code' => 'isv.SMS_CONTENT_ILLEGAL',
+)array (
+  'Message' => '短信内容非法',
+  'RequestId' => 'A2C1D381-6E78-4F6C-AF08-01C2212FCA46',
+  'Code' => 'isv.SMS_CONTENT_ILLEGAL',
+)
